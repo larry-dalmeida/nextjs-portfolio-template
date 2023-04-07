@@ -13,16 +13,19 @@ const RESUME_PATH =
 const navItems = {
   "/": {
     name: "home",
+    isExternal: false,
   },
   "/projects": {
     name: "projects",
+    isExternal: false,
   },
   "/about": {
     name: "about",
+    isExternal: false,
   },
   [RESUME_PATH]: {
     name: "resume",
-    type: "external",
+    isExternal: true,
   },
 };
 
@@ -98,9 +101,8 @@ export default function Navbar() {
             id="nav"
           >
             <div className="flex flex-row md:flex-col space-x-0 pr-10 mb-2 mt-2 md:mt-0">
-              {Object.entries(navItems).map(([path, { name, type }]) => {
+              {Object.entries(navItems).map(([path, { name, isExternal }]) => {
                 const isActive = path === pathname;
-                const isExternal = type === "external";
                 const props = { path, name, isActive, key: path };
                 return isExternal ? (
                   <ExternalNavLink path={path} name={name} key={path} />

@@ -8,11 +8,11 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 const computedFields = {
   slug: {
     type: 'string',
-    resolve: (doc) => doc._raw.flattenedPath,
+    resolve: (doc: any) => doc._raw.flattenedPath,
   },
   structuredData: {
     type: 'object',
-    resolve: (doc) => ({
+    resolve: (doc: any) => ({
       '@context': 'https://schema.org',
       '@type': 'ProjectPosting',
       headline: doc.title,
@@ -49,8 +49,11 @@ export const Project = defineDocumentType(() => ({
       type: 'string',
     },
   },
+  // @ts-ignore
   computedFields,
 }));
+
+type NodeType = any;
 
 export default makeSource({
   contentDirPath: 'content',
@@ -63,17 +66,17 @@ export default makeSource({
         rehypePrettyCode,
         {
           theme: 'one-dark-pro',
-          onVisitLine(node) {
+          onVisitLine(node: NodeType) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
             if (node.children.length === 0) {
               node.children = [{ type: 'text', value: ' ' }];
             }
           },
-          onVisitHighlightedLine(node) {
+          onVisitHighlightedLine(node: NodeType) {
             node.properties.className.push('line--highlighted');
           },
-          onVisitHighlightedWord(node) {
+          onVisitHighlightedWord(node: NodeType) {
             node.properties.className = ['word--highlighted'];
           },
         },
