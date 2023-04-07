@@ -18,6 +18,9 @@ export default function Projects() {
               >
                 <div className="w-full flex flex-col">
                   <p>{project.title}</p>
+                  <p className="font-mono text-sm text-neutral-500 tracking-tighter">
+                    {project.summary}
+                  </p>
                 </div>
               </Link>
             ))}

@@ -23,6 +23,9 @@ const navItems = {
     name: "about",
     isExternal: false,
   },
+  "/blog": {
+    name: "blog",
+  },
   [RESUME_PATH]: {
     name: "resume",
     isExternal: true,
