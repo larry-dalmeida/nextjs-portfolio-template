@@ -3,9 +3,13 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next/types";
 import { Mdx } from "@/components/mdx";
 
+type URLMetaData = {
+  params: any
+};
+
 export async function generateMetadata({
   params,
-}: { params: string }): Promise<Metadata | undefined> {
+}: URLMetaData): Promise<Metadata | undefined> {
   const project = allProjects.find((project) => project.slug === params.slug);
 
   if (!project) {
@@ -38,7 +42,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function Project({ params }) {
+export default async function Project({ params }: URLMetaData) {
   const project = allProjects.find((project) => project.slug === params.slug);
 
   if (!project) {
