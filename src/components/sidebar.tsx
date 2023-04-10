@@ -38,6 +38,7 @@ const navItems: NavEntry = {
   },
   "/blog": {
     name: "blog",
+    isExternal: false,
   },
   [RESUME_PATH]: {
     name: "resume",
