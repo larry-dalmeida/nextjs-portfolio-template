@@ -19,6 +19,24 @@ export default async function HomePage() {
           priority
         />
         <div className="mt-8 md:mt-0 ml-0 md:ml-6 space-y-2 text-neutral-500 dark:text-neutral-400">
+        <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://github.com/TechLabs-Berlin/wt23-posegenie#-artificial-intelligence"
+            className="flex items-center gap-2"
+          >
+            <i className="fa-solid fa-rocket"></i>
+            Latest Project: Pose Detection
+          </a>
+        <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://www.youtube.com/live/BfS71B6Lxfs?feature=share"
+            className="flex items-center gap-2"
+          >
+            <i className="fa-brands fa-youtube"></i>
+            Recent Talk: Winning Measure of Music Hackathon
+          </a>
           <a
             rel="noopener noreferrer"
             target="_blank"
