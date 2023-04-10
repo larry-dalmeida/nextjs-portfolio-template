@@ -19,6 +19,10 @@ const navItems = {
     name: "projects",
     isExternal: false,
   },
+  "/talks": {
+    name: "talks",
+    isExternal: false,
+  },
   "/about": {
     name: "about",
     isExternal: false,
