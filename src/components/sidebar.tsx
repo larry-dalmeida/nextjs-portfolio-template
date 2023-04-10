@@ -10,7 +10,16 @@ import logo from "../app/logo.svg";
 const RESUME_PATH =
   "https://docs.google.com/document/d/1IS8AkTmY1Z1GxdXoKF771m3wzbxOTIsajglC2bPppO4/edit?usp=sharing";
 
-const navItems = {
+type NavFields = {
+  name: string;
+  isExternal: boolean;
+}
+
+type NavEntry = {
+  [key: string]: NavFields
+};
+
+const navItems: NavEntry = {
   "/": {
     name: "home",
     isExternal: false,
