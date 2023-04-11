@@ -8,10 +8,10 @@ export const metadata: Metadata = {
 const About = () => (
   <section>
     <h1 className="font-bold text-3xl font-serif">About Me</h1>
-    <p className="my-5 text-neutral-800 dark:text-neutral-200">
+    <p className="my-5 text-neutral-800">
       Hey, I&apos;m Rashmi. Most folks know me as <b>bla bla</b> online.
     </p>
-    <div className="prose prose-neutral dark:prose-invert text-neutral-800 dark:text-neutral-200 space-y-4">
+    <div className="prose prose-neutral text-neutral-800 space-y-4">
       <p>
         I&apos;m currently pursuing a{" "}
         <b>Master&apos;s Degree in Data Science & Project Management at HTW</b>,

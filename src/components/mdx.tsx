@@ -33,7 +33,7 @@ function RoundedImage(props: any) {
 
 function Callout(props: any) {
   return (
-    <div className="flex bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 my-8">
+    <div className="flex bg-neutral-100 border border-neutral-200 rounded-lg p-4 my-8">
       <div className="flex items-center w-4 mr-4">{props.emoji}</div>
       <div className="w-full callout">{props.children}</div>
     </div>
@@ -48,7 +48,7 @@ type Argument = {
 
 function ProsCard({ title, pros = [] }: Argument) {
   return (
-    <div className="border border-emerald-200 dark:border-emerald-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-4 w-full">
+    <div className="border border-emerald-200 bg-neutral-50 rounded-xl p-6 my-4 w-full">
       <span>{`You might use ${title} if...`}</span>
       <div className="mt-4">
         {pros.map((pro) => (
@@ -77,7 +77,7 @@ function ProsCard({ title, pros = [] }: Argument) {
 
 function ConsCard({ title, cons = [] }: Argument) {
   return (
-    <div className="border border-red-200 dark:border-red-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-6 w-full">
+    <div className="border border-red-200 bg-neutral-50 rounded-xl p-6 my-6 w-full">
       <span>{`You might not use ${title} if...`}</span>
       <div className="mt-4">
         {cons.map((con) => (
@@ -115,7 +115,7 @@ interface MdxProps {
 export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
   return (
-    <article className="prose prose-quoteless prose-neutral dark:prose-invert">
+    <article className="prose prose-quoteless prose-neutral">
       {/* @ts-ignore */}
       <Component components={{ ...components }} />
     </article>

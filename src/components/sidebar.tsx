@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { LayoutGroup, motion } from "framer-motion";
 import logo from "../../public/images/logo.svg";
-import {useTheme, ThemeProvider} from 'next-themes'
 
 const RESUME_PATH =
   "https://docs.google.com/document/d/1IS8AkTmY1Z1GxdXoKF771m3wzbxOTIsajglC2bPppO4/edit?usp=sharing";
@@ -14,10 +13,10 @@ const RESUME_PATH =
 type NavFields = {
   name: string;
   isExternal: boolean;
-}
+};
 
 type NavEntry = {
-  [key: string]: NavFields
+  [key: string]: NavFields;
 };
 
 const navItems: NavEntry = {
@@ -44,15 +43,9 @@ const navItems: NavEntry = {
 };
 
 function Logo() {
-  const {theme, } = useTheme();
-  let src = logo;
-  if(theme === 'dark') {
-    src = "/images/logo-dark.svg"
-  }
-
   return (
     <Link aria-label="Rashmi DSouza" href="/">
-      <Image src={src} alt="Picture of the author" width={25} height={37} />
+      <Image src={logo} alt="Picture of the author" width={25} height={37} />
     </Link>
   );
 }
@@ -63,13 +56,14 @@ type NavLinkProps = {
   name: string;
 };
 
-const getLinkStyles = (isActive: boolean) => clsx(
-  "transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle",
-  {
-    "text-neutral-500": !isActive,
-    "font-bold": isActive,
-  }
-);
+const getLinkStyles = (isActive: boolean) =>
+  clsx(
+    "transition-all hover:text-neutral-800 flex align-middle",
+    {
+      "text-neutral-500": !isActive,
+      "font-bold": isActive,
+    }
+  );
 
 const ExternalNavLink = ({ path, isActive, name }: NavLinkProps) => (
   <a
@@ -83,16 +77,12 @@ const ExternalNavLink = ({ path, isActive, name }: NavLinkProps) => (
 );
 
 const InternalNavLink = ({ path, isActive, name }: NavLinkProps) => (
-  <Link
-    key={path}
-    href={path}
-    className={getLinkStyles(Boolean(isActive))}
-  >
+  <Link key={path} href={path} className={getLinkStyles(Boolean(isActive))}>
     <span className="relative py-[5px] px-[10px]">
       {name}
       {isActive ? (
         <motion.div
-          className="absolute inset-0 bg-neutral-100 dark:bg-neutral-800 rounded-md z-[-1]"
+          className="absolute inset-0 bg-neutral-100 rounded-md z-[-1]"
           layoutId="sidebar"
           transition={{
             type: "spring",
@@ -112,7 +102,6 @@ export default function Navbar() {
   }
 
   return (
-    <ThemeProvider enableSystem={true}>
     <aside className="md:w-[150px] md:flex-shrink-0 -mx-4 md:mx-0 md:px-0 font-serif">
       <div className="lg:sticky lg:top-20">
         <div className="ml-2 md:ml-[12px] mb-2 px-4 md:px-0 md:mb-8 space-y-10 flex flex-col md:flex-row items-start ">
@@ -143,6 +132,5 @@ export default function Navbar() {
         </LayoutGroup>
       </div>
     </aside>
-    </ThemeProvider>
   );
 }
