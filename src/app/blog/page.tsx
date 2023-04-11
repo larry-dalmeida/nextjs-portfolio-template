@@ -6,18 +6,20 @@ const Blog = () => (
     <ol>
       {blogPosts.map((post) => (
         <li key={post.href}>
-          <a
-            className="flex flex-col space-y-1 mb-4"
-            href={post.href}
-            target="_blank"
-          >
+          <div className="flex flex-col space-y-1 mb-4">
             <div className="w-full flex flex-col">
-              <p>{post.title}</p>
+              <a
+                href={post.href}
+                target="_blank"
+                className="underline hover:no-underline"
+              >
+                {post.title}
+              </a>
               <p className="font-mono text-sm text-neutral-500 tracking-tighter">
                 {post.summary}
               </p>
             </div>
-          </a>
+          </div>
         </li>
       ))}
     </ol>

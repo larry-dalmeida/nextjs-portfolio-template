@@ -13,17 +13,19 @@ export default function Projects() {
       <ol>
         {projects.map((project) => (
           <li key={project.slug}>
-            <Link
-              className="flex flex-col space-y-1 mb-4"
-              href={`/projects/${project.slug}`}
-            >
+            <div className="flex flex-col space-y-1 mb-4">
               <div className="w-full flex flex-col">
-                <p>{project.title}</p>
+                <Link
+                  className="underline hover:no-underline"
+                  href={`/projects/${project.slug}`}
+                >
+                  {project.title}
+                </Link>
                 <p className="font-mono text-sm text-neutral-500 tracking-tighter">
                   {project.summary}
                 </p>
               </div>
-            </Link>
+            </div>
           </li>
         ))}
       </ol>
