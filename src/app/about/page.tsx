@@ -9,18 +9,18 @@ const About = () => (
   <section>
     <h1 className="font-bold text-3xl font-serif">About Me</h1>
     <p className="my-5 text-neutral-800 dark:text-neutral-200">
-      Hey, I'm Rashmi. Most folks know me as <b>bla bla</b> online.
+      Hey, I&apos;m Rashmi. Most folks know me as <b>bla bla</b> online.
     </p>
     <div className="prose prose-neutral dark:prose-invert text-neutral-800 dark:text-neutral-200 space-y-4">
       <p>
-        I'm currently pursuing a{" "}
-        <b>Master's Degree in Data Science & Project Management at HTW</b>,
+        I&apos;m currently pursuing a{" "}
+        <b>Master&apos;s Degree in Data Science & Project Management at HTW</b>,
         where I lead our Developer Relations and Documentation teams. I focus on{" "}
         <b>educating and growing</b> the Vercel and Next.js communities.
       </p>
       <hr />
       <p>
-        I'm passionate about many creative pursuits, including music,
+        I&apos;m passionate about many creative pursuits, including music,
         photography, videography, and of course, coding. This combination of
         interests is what ultimately led me to my current role in building
         developer communities.
