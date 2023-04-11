@@ -63,11 +63,19 @@ type NavLinkProps = {
   name: string;
 };
 
-const ExternalNavLink = ({ path, name }: NavLinkProps) => (
+const getLinkStyles = (isActive: boolean) => clsx(
+  "transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle",
+  {
+    "text-neutral-500": !isActive,
+    "font-bold": isActive,
+  }
+);
+
+const ExternalNavLink = ({ path, isActive, name }: NavLinkProps) => (
   <a
     key={path}
     href={path}
-    className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle"
+    className={getLinkStyles(Boolean(isActive))}
     target="_blank"
   >
     <span className="relative py-[5px] px-[10px]">{name}</span>
@@ -78,13 +86,7 @@ const InternalNavLink = ({ path, isActive, name }: NavLinkProps) => (
   <Link
     key={path}
     href={path}
-    className={clsx(
-      "transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle",
-      {
-        "text-neutral-500": !isActive,
-        "font-bold": isActive,
-      }
-    )}
+    className={getLinkStyles(Boolean(isActive))}
   >
     <span className="relative py-[5px] px-[10px]">
       {name}
