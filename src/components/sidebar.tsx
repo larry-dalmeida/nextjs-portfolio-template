@@ -20,10 +20,6 @@ type NavEntry = {
 };
 
 const navItems: NavEntry = {
-  "/": {
-    name: "home",
-    isExternal: false,
-  },
   "/projects": {
     name: "projects",
     isExternal: false,
